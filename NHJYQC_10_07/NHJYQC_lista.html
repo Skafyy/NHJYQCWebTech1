@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <title>NHJYQC - Lista készítés</title>
+    <style>
+        .container {
+            display: block;
+            text-align: justify;
+            width: 500px;
+            min-height: 160px;
+        }
+
+        .inline {
+            list-style-type: upper-latin;
+            color: red;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .desclist {
+            color:cadetblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista készítése</h1>
+        
+       
+        <h2>a, Rendezetlen lista</h2>
+        <ul>
+            <li>piros</li>
+            <li>kék</li>
+            <li>sárga</li>
+            <li>barna</li>
+        </ul>
+
+        <ul style="color: blue; font-size: larger;">
+            <li>sárga</li>
+            <li>fehér</li>
+            <li>zöld</li>
+            <li>kék</li>
+        </ul>
+
+        <h2>b, Rendezett lista</h2>
+        <ol>
+            <li>pink</li>
+            <li>kék</li>
+            <li>sárga</li>
+            <li>barna</li>
+        </ol>
+
+        <h2>c, Nagybetűk</h2>
+        <ol type="A">
+            <li>pink</li>
+            <li>kék</li>
+            <li>sárga</li>
+            <li>barna</li>
+        </ol>
+
+        <h2>d, Római számok</h2>
+        <ol type="I">
+            <li>I. ÉVF</li>
+            <li>II. ÉVF</li>
+            <li>III. ÉVF</li>
+        </ol>
+
+        <h2>d, Római számok</h2>
+        <ol type="A" class="inline">
+            <li>sárga</li>
+            <li>kék</li>
+            <li>Zöld</li>
+            <li>pink</li>
+        </ol>
+
+        <h2>f, HTML Description Lists</h2>
+        <dl class="desclist">
+            <dt><b>Farkas</b></dt>
+            <dd>Kutyaszerű ragadozó emlős</dd>
+            <dt><b>Fájl</b></dt>
+            <dd>Szöveges állomány</dd>
+            <dt><b>Oroszlán</b></dt>
+            <dd>Macskaszerű ragadozó emlős</dd>
+            <dd>Az állatok királya</dd>
+          </dl>
+
+          <h2>g, Embedded HTML lists</h2>
+
+          <h2 style="color: pink;">Kedvenc reggeli italaim</h2>
+          <ul>
+            <li>Kávé</li>
+            <li>Tea</li>
+            <ul>
+                <li>Fekete</li>
+                <li>Zöld</li>
+            </ul>
+            <li>Tek</li>
+        </ul>
+
+        <h2>h, Control List Counting</h2>
+        <ol start="5">
+            <li>KL</li>
+            <li>EL</li>
+            <li>BL</li>
+        </ol>
+</div> 
+
+</body>
+</html>
