@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="hu">
+        <head>
+            <title>NHJYQC - 09.09</title>
+        </head>
+        <body>
+            <style>
+                h1, h2 {text-align: center;}
+            </style>
+
+                <h1>Verziókövető rendszerek</h1>
+
+                <h2>
+                    Lokális munkakönyvtár (Working Directory)
+                <p>A fejlesztő a fájlokon dolgozik a saját gépén. Minden változtatás itt történik, mielőtt a verziókövető rendszer rögzítené.</p>
+
+                    Staging area (Index)
+                <p>A módosított fájlokat a fejlesztő először a staging area-ba helyezi (git add), ahol előkészíti őket a commit-ra. Ez a lépés lehetővé teszi a változtatások csoportosítását.</p>
+
+                    Commit
+                    <p>A commit rögzíti a változtatásokat a lokális repository-ban, minden commit egyedi azonosítóval (hash) rendelkezik, és tartalmazza a szerző nevét, email címét, valamint a változtatások leírását. A commit-ok gráfként ábrázolhatók, ahol a csomópontok a commit-ok, az élek pedig a verziók közötti kapcsolatot jelzik.</p>
+
+                   Branch (ágak)
+                   <p>A fejlesztés különböző ágakon történhet. A master vagy main az alapértelmezett fő ág, míg a feature branch-ek külön funkciók fejlesztésére szolgálnak. Az ágak lehetővé teszik a párhuzamos fejlesztést anélkül, hogy a fő ágat közvetlenül módosítanánk.</p>
+
+                   Merge (összefésülés)
+                   <p>Az ágak összeolvasztása (merge) integrálja a változtatásokat a fő ágba. Konfliktus esetén a rendszer jelzi, hogy manuális beavatkozás szükséges.</p>
+
+                   Távoli repository (Remote Repository)
+                   <p>A lokális repository tartalmát a fejlesztő szinkronizálhatja a távoli repository-val (git push), és lekérheti mások változtatásait (git pull). Ez biztosítja a csapatmunkát és a verziók közötti konzisztenciát.</p>
+                </h2>
+             
+        </body>
+    </html>
