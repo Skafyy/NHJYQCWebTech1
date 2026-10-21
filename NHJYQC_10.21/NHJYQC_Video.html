@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>NHJYQC - Video</title>
+    <style>
+        .grid {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 1rem;
+            width: 40rem;
+        }
+
+        footer {
+            border-top: 4px solid gray;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            width: 37.5rem;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Videó lejátszása</h1>
+    </header>
+
+    <section>
+        <video width="400" controls>
+            <source src="NHJYQC_video.mp4" type="video/mp4">
+
+        </video>
+
+
+    <div class="grid">
+        <div>
+            <button id="start">Indítás</button>
+            <button id="stop">Leállítás</button>
+        </div>
+        <div>
+            <button id="startstop">Indítás/Leállítás</button>
+        </div>
+        <div>
+            <button id="mute">Néma</button>
+            <button id="quite">Halk</button>
+            <button id="loud">Hangos</button>
+        </div>
+        <div>
+            <button id="veryslow">Nagyon lassú</button>
+            <button id="slow">Lassú</button>
+            <button id="normal">Normál</button>
+            <button id="fast">Gyors</button>
+            <button id="veryfast">Nagyon gyors</button>
+        </div>
+        <div>
+            <button id="hasitended">Befejeződött-e</button>
+            <button id="duration">Videó hossza (mp)</button>
+            <button id="position">Jelenlegi pozíció</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    Forrás: <a href="https://www.w3schools.com/htm1/htm15 video.asp">https://www.w3schools.com/htm1/htm15 video.asp</a>
+</footer>
+
+<script>
+    let btnClick = (id, onclick) => document.getElementById(id).addEventListener("click", onclick);
+
+    const video = document.querySelector("video");
+
+    btnClick("start",    () => video.play());
+    btnClick("stop",    () => video.pause());
+    btnClick("startstop",    () => video.paused ? video.play() : video.pause());
+
+    btnClick("mute",    () => video.volume = 0);
+    btnClick("quite",    () => video.volume = 0.5);
+    btnClick("loud",    () => video.volume = 1);
+
+    btnClick("veryslow",    () => video.playbackRate = 0.5);
+    btnClick("slow",    () => video.playbackRate = 0.75);
+    btnClick("normal",    () => video.playbackRate = 1.0);
+    btnClick("fast",    () => video.playbackRate = 1.25);
+    btnClick("veryfast",    () => video.playbackRate = 1.5);
+
+    btnClick("hasitended",    () => alert(video.ended));
+    btnClick("duration",    () => alert(video.duration));
+    btnClick("currently",    () => alert(video.currentTime));
+
+</script>
+
+</body>
+</html>

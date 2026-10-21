@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <title>NHJYQC - GAP rácsos</title>
+
+    <style>
+        #grid-container {
+            border: 1px solid black;
+            background-color: aquamarine;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px 50px;
+        }
+
+        #grid-container > div {
+            border: 1px solid black;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>A gap tulajdonság rács segítségével</h1>
+    <p>A gap tulajdonsággal adhatjuk meg a sorok és oszlopok közötti távolság.</p>
+    <p>a rácsnak a sorai között 20 px, az oszlopai között pedig 50 px a távolság.</p>
+
+    <div id="grid-container">
+        <div>Egy</div>
+        <div>Kettő</div>
+        <div>Három</div>
+        <div>Négy</div>
+        <div>Öt</div>
+        <div>Hat</div>
+        <div>Hét</div>
+    </div>
+</body>
+</html>
