@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Varga's Pizza - Galéria és Videó</title>
+    <link rel="icon" type="image/png" href="../Media/pizza.png">
+    <link rel="stylesheet" href="../Styles/Style.css">
+    <script src="../Script/script.js" defer></script>
+    <style>
+        .video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            background: #fdfdfd;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .video-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .video-controls button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .video-controls button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="../Media/pizza.png" alt="Varga's Pizza Logó" class="header-logo">
+        <h1>Varga's Pizza</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../Index.html">Főoldal</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="galeria.html" style="background-color: #e67e22;">Galéria</a></li>
+            <li><a href="pizzaink.html">Pizzák</a></li>
+            <li><a href="rendeles.html">Rendelés</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-container">
+        
+        <main style="grid-column: span 2;">
+            <section>
+                <h2>Pizzáink és éttermünk képekben & videón</h2>
+                <p>Tekints meg néhány pillanatképet, valamint a kemencénk működését bemutató videót!</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                    <div style="background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <img src="../Media/picture_1.jpg" alt="Kép a szakácsról" style="width: 100%; height: 160px; object-fit: cover; border-radius: 4px;">
+                        <p style="text-align: center; font-weight: 600; margin-top: 8px;">Szakácsaink</p>
+                    </div>
+                    <div style="background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <img src="../Media/picture_2.jpg" alt="Vendégeink" style="width: 100%; height: 160px; object-fit: cover; border-radius: 4px;">
+                        <p style="text-align: center; font-weight: 600; margin-top: 8px;">Vendégeink</p>
+                    </div>
+                </div>
+
+                <div class="video-section">
+                    <h3>Tekintse meg, hogyan készülnek pizzáink!</h3>
+                    <video id="pizzaVideo">
+                        <source src="../Media/Video.mp4" type="video/mp4">
+                        A böngésződ nem támogatja a videó elemet.
+                    </video>
+
+                    <div class="video-controls">
+                        <button onclick="playVideo()">Lejátszás</button>
+                        <button onclick="pauseVideo()">Szünet</button>
+                        <button onclick="restartVideo()">Újra</button>
+                        <button onclick="toggleMute()" id="muteBtn">Némítás</button>
+                        <button onclick="toggleSpeed()" id="speedBtn">Sebesség: Normál</button>
+                        <button onclick="hasItEnded()" id="hasitended">Befejeződött-e?</button>
+                        <button onclick="getCurrentPosition()" id="currentPosition">Jelenlegi pozíció</button>
+                        <button onclick="getDuration()" id="duration">Teljes időtartam</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Varga István Hunor | Web technológiák 1 Projekt</p>
+    </footer>
+
+</body>
+</html>

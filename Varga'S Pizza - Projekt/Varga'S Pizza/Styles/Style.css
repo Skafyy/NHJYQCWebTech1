@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
+/* Alapbeállítások */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Media/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2c3e50;
+    color: white;
+    padding: 25px 30px;
+}
+
+.header-logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+nav {
+    background-color: #1e272e; /* Elegáns sötét háttér */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 22px;
+    display: block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav li a:hover {
+    background-color: #e67e22;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main, aside {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 20px;
+}
+
+.pizza-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pizza-table th, .pizza-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.pizza-table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: 600;
+}
+
+.pizza-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.pizza-table td:last-child {
+    font-weight: bold;
+    color: #d35400;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.order-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.order-form label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.order-form input[type="text"],
+.order-form input[type="tel"],
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+    background-color: #fdfdfd;
+}
+
+.order-form .form-group-radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form .radio-group {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 4px;
+}
+
+.order-form .radio-group label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.order-form button {
+    background-color: #e67e22;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.order-form button:hover {
+    background-color: #d35400;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Varga's Pizza - Online Rendelés</title>
+    <link rel="icon" type="image/png" href="../Media/pizza.png">
+    <link rel="stylesheet" href="../Styles/Style.css">
+    <style>
+        .error-msg {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="../Media/pizza.png" alt="Varga's Pizza Logó" class="header-logo">
+        <h1>Varga's Pizza</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../Index.html">Főoldal</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="galeria.html">Galéria</a></li>
+            <li><a href="pizzaink.html">Pizzák</a></li>
+            <li><a href="rendeles.html" style="background-color: #e67e22;">Rendelés</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-container">
+        
+        <main>
+            <section>
+                <h2>Online Pizzarendelés</h2>
+                <p>Add meg az adataidat és válaszd ki kedvenc pizzádat, mi pedig frissen és forrón kiszállítjuk neked!</p>
+                
+                <form class="order-form" id="orderForm" action="../PHP/feldolgozo.php" method="POST">
+                    <div>
+                        <label for="nev">Teljes név:*</label>
+                        <input type="text" id="nev" name="nev" placeholder="Pl. Kovács Péter">
+                        <div id="nev-error" class="error-msg"></div>
+                    </div>
+
+                    <div>
+                        <label for="telefon">Telefonszám:*</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="Pl. +36 30 123 4567">
+                        <div id="telefon-error" class="error-msg"></div>
+                    </div>
+
+                    <div>
+                        <label for="cim">Szállítási cím (Utca, házszám, emelet):*</label>
+                        <input type="text" id="cim" name="cim" placeholder="Miskolc, Fő utca 1.">
+                        <div id="cim-error" class="error-msg"></div>
+                    </div>
+
+                    <div>
+                        <label for="kedvenc-feltet">Ajánlott extra feltét (Adatlista):</label>
+                        <input list="feltetek" id="kedvenc-feltet" name="kedvenc_feltet" placeholder="Kezdj el gépelni...">
+                        <datalist id="feltetek">
+                            <option value="Extra sajt">
+                            <option value="Fokhagymás perem">
+                            <option value="Erős pepperoni">
+                            <option value="Bacon csíkok">
+                        </datalist>
+                    </div>
+
+                    <div>
+                        <label for="pizza">Válassz pizzát:</label>
+                        <select id="pizza" name="pizza">
+                            <option value="margareta">Margareta - 2 100 Ft</option>
+                            <option value="sonkas">Sonkás-Kukoricás - 2 400 Ft</option>
+                            <option value="diavola">Diavola (Csípős) - 2 600 Ft</option>
+                            <option value="quattro">Quattro Formaggi - 2 800 Ft</option>
+                            <option value="varga">Varga Különlegesség - 2 900 Ft</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-radio">
+                        <label>Méret:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="meret" value="normal" checked> Normál (32 cm)</label>
+                            <label><input type="radio" name="meret" value="csaladi"> Családi (45 cm +1000 Ft)</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="kiszallitasi_datum">Kiszállítás tervezett dátuma:</label>
+                        <input type="date" id="kiszallitasi_datum" name="kiszallitasi_datum">
+                    </div>
+
+                    <div>
+                        <label for="doboz_szin">Válassz doboz színt (Egyedi dizájn):</label>
+                        <input type="color" id="doboz_szin" name="doboz_szin" value="#e67e22" style="width: 80px; height: 40px; cursor: pointer; border: none; background: none;">
+                    </div>
+
+                    <div style="flex-direction: row; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="aszf" name="aszf" style="width: 20px; height: 20px;">
+                        <label for="aszf" style="cursor: pointer; font-weight: normal;">Elfogadom az Általános Szerződési Feltételeket és az adatkezelési szabályzatot.</label>
+                        <div id="aszf-error" class="error-msg"></div>
+                    </div>
+
+                    <div>
+                        <label for="megjegyzes">Megjegyzés a futárnak vagy a konyhának:</label>
+                        <textarea id="megjegyzes" name="megjegyzes" rows="4" placeholder="Pl. Csengetni kell, vagy hagyja az ajtó előtt..."></textarea>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <button type="button" id="toggleCouponBtn" style="background-color: #7f8c8d; color: white; border: none; padding: 8px 14px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                        🎁 Van kuponkódod? Kattints ide!
+                       </button>
+    
+                    <div id="couponBox" style="display: none; margin-top: 10px; padding: 12px; background: #fdf2e9; border: 1px dashed #e67e22; border-radius: 5px;">
+                        <label for="kupon">Kuponkód:</label>
+                        <input type="text" id="kupon" name="kupon" placeholder="Pl. PIZZA2026" style="margin-top: 5px;">
+                    </div>
+                    </div>
+
+                    <button type="submit">Megrendelés elküldése</button>
+                </form>
+            </section>
+        </main>
+
+        <aside>
+            <h3>Rendelési Lépések 📋</h3>
+            <ol style="padding-left: 20px; font-size: 14px; line-height: 1.6;">
+                <li>Add meg a személyes adataidat.</li>
+                <li>Válaszd ki a kívánt pizzát és méretet.</li>
+                <li>Jelöld meg a kiszállítás dátumát.</li>
+                <li>Hagyd jóvá az ÁSZF-et és küldd el!</li>
+            </ol>
+            <hr>
+            <h3>Fontos Információk ℹ️</h3>
+            <p><strong>Minimális rendelési összeg:</strong> 2 000 Ft</p>
+            <p><strong>Kiszállítási idő:</strong> 30-45 perc Miskolc területén.</p>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Varga István Hunor | Web technológiák 1 Projekt</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Script/form-validation.js" defer></script>
+
+</body>
+</html>

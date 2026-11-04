@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Varga's Pizza - Pizzáink</title>
+    <link rel="icon" type="image/png" href="../Media/pizza.png">
+    <link rel="stylesheet" href="../Styles/Style.css">
+</head>
+<body>
+
+    <header>
+        <img src="../Media/pizza.png" alt="Varga's Pizza Logó" class="header-logo">
+        <h1>Varga's Pizza</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../Index.html">Főoldal</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="galeria.html">Galéria</a></li>
+            <li><a href="pizzak.html" style="background-color: #e67e22;">Pizzák</a></li>
+            <li><a href="rendeles.html">Rendelés</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-container">
+        
+        <main>
+            <section>
+                <h2>Étlapunk – Fenséges pizzák</h2>
+                <p>Minden pizzánkat frissen, kézzel nyújtott tésztából és minőségi alapanyagokból készítjük el kemencénkben.</p>
+                
+                <table class="pizza-table">
+                    <thead>
+                        <tr>
+                            <th>Pizza neve</th>
+                            <th>Összetevők</th>
+                            <th>Ár (Ft)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Margareta</strong></td>
+                            <td>Paradicsomszósz, mozzarella, friss bazsalikom</td>
+                            <td>2 100 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sonkás-Kukoricás</strong></td>
+                            <td>Paradicsomszósz, mozzarella, sonka, kukorica</td>
+                            <td>2 400 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diavola (Csípős)</strong></td>
+                            <td>Paradicsomszósz, mozzarella, olasz pikáns szalámi, erős paprika</td>
+                            <td>2 600 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quattro Formaggi</strong></td>
+                            <td>Paradicsomszósz, mozzarella, gorgonzola, füstölt sajt, parmezán</td>
+                            <td>2 800 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Varga Különlegesség</strong></td>
+                            <td>Fokhagymás-tejfölös alap, mozzarella, tarja, lila hagyma, bacon, olívabogyó</td>
+                            <td>2 900 Ft</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+
+
+        <aside>
+            <h3>Extra Feltétek 🧀</h3>
+            <p>Bármelyik pizzához kérhetsz extra feltétet (+300 Ft):</p>
+            <ul>
+                <li>Extra sajt</li>
+                <li>Jalapeno paprika</li>
+                <li>Gomba</li>
+                <li>Bacon</li>
+            </ul>
+            <hr>
+            <h3>Méretválaszték</h3>
+            <p>Normál: <strong>32 cm</strong><br>Családi: <strong>45 cm</strong> (+1000 Ft)</p>
+        </aside>
+
+    </div>
+
+            <section>
+<div style="margin-top: 30px; padding: 20px; background: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <h3>Napi Különlegességek (AJAX betöltés)</h3>
+    <p>Kattints az alábbi gombra a friss séfajánlat lekéréséhez a JSON fájlból:</p>
+    
+    <button id="loadAjaxBtn" style="background-color: #2c3e50; color: white; border: none; padding: 10px 18px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background-color 0.3s;">
+        Ajánlatok betöltése
+    </button>
+    
+    <div id="ajaxContainer" style="margin-top: 15px;"></div>
+</div>
+        </section>
+
+    <footer>
+        <p>&copy; 2026 - NHJYQC - Varga István Hunor | Web technológiák 1 Projekt</p>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../Script/ajax-loader.js" defer></script>
+
+</body>
+</html>
