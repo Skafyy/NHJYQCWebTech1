@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <title>NHJYQC - Canvas</title>
+
+    <style>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+
+        main {
+            display: block;
+            width: fit-content;
+            border-bottom: 4px solid gray;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Rajzolás a vászonra - NHJYQC</h1>
+    
+<canvas id="myCanvas" width="700" height="350"></canvas>
+
+<footer>
+    <h3>Források:</h3>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">MDN Web Docs - HTML Canvas API</a></p>
+    <p><a href="https://www.w3schools.com/html/html5_canvas.asp">W3Schools - HTML Canvas Tutorial</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">MDN Web Docs - CanvasRenderingContext2D</a></p>
+</footer>
+
+<script>
+    const canvas = document.getElementById('myCanvas');
+    const vihx = canvas.getContext("2d");
+
+    vihx.font="30px Arial";
+    vihx.fillStyle="orange";
+
+    vihx.fillText('Programtervező informatikus 2026', 200, 40);
+
+    const gradient = vihx.createRadialGradient(175, 100, 10, 200, 110, 75);
+    gradient.addColorStop(0, '#ffcc00');
+    gradient.addColorStop(0.3, '#6600ff');
+    gradient.addColorStop(1, '#33ff33');
+
+    vihx.fillStyle = gradient;
+    vihx.fillRect(100, 60, 200, 120);
+
+    vihx.strokeStyle='blue';
+    vihx.lineWidth=5;
+
+    vihx.beginPath();
+    vihx.rect(80, 200, 240, 140);
+    vihx.stroke();
+
+
+    vihx.fillStyle='yellow';
+    vihx.lineWidth=3;
+
+    vihx.beginPath();
+    vihx.arc(500, 140, 70, Math.PI * 0.3, Math.PI * 1.5);
+    vihx.fill();
+    vihx.stroke();
+
+    const img = new Image();
+    img.src = 'iit.jpg';
+    img.onload = () => {
+        vihx.drawImage(img, 500, 230, 200, 120,)
+    }
+</script>
+
+</body>
+</html>
