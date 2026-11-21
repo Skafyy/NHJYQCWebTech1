@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>NHJYQC - Tömbökön belüli tömbök ciklusa</title>
+</head>
+<body>
+    <h1>Tömbökön belüli tömbök ciklusa</h1>
+    <h2 id="hallgato"></h2>
+    <div id="output"></div>
+
+    <script>
+        const VIHObj = {
+            "name": "VIH",
+            "age": 22,
+            "cars": [
+                { "name": "Toyota", "models": ["CHR", "Corolla", "Proace"] },
+                { "name": "Ford", "models": ["Kuga", "Mondeo", "Mustang"] },
+                { "name": "BMW", "models": ["320", "X3", "X5"] },
+                { "name": "Fiat", "models": ["500", "Panda", "Tipo"] }
+            ]
+        };
+
+        document.getElementById("hallgato").textContent = `${VIHObj.name} (${VIHObj.age})`;
+
+        let html = "";
+        for (let i = 0; i < VIHObj.cars.length; i++) {
+            html += `<h3>${VIHObj.cars[i].name}:</h3><ul>`;
+            for (let j = 0; j < VIHObj.cars[i].models.length; j++) {
+                html += `<li>${VIHObj.cars[i].models[j]}</li>`;
+            }
+            html += `</ul>`;
+        }
+
+        document.getElementById("output").innerHTML = html;
+    </script>
+</body>
+</html>

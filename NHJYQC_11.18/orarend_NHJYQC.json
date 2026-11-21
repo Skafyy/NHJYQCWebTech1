@@ -1,0 +1,39 @@
+{
+  "VIH_orarend": {
+    "ora": [
+      {
+        "targy": "Web technológiák 1.",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": 10,
+          "ig": 12
+        },
+        "helyszin": "Inf/101",
+        "oktato": "Dr. Bednarik László",
+        "szak": "MI, PTI"
+      },
+      {
+        "targy": "Mesterséges intelligencia alapjai",
+        "idopont": {
+          "nap": "kedd",
+          "tol": 8,
+          "ig": 10
+        },
+        "helyszin": "A1/312",
+        "oktato": "Dr. XY",
+        "szak": "PTI"
+      },
+      {
+        "targy": "Szoftvertesztelés",
+        "idopont": {
+          "nap": "szerda",
+          "tol": 12,
+          "ig": 14
+        },
+        "helyszin": "Inf. 103",
+        "oktato": "Dr. XY",
+        "szak": "PTI"
+      }
+    ]
+  }
+}

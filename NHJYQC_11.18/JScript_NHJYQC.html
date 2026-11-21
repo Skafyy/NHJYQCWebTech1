@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>NHJYQC - Órarend JSON feldolgozás</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .ora-blokk {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+        button { padding: 8px 16px; cursor: pointer; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h1>NHJYQC Órarend 2026</h1>
+
+    <button id="betoltBtn">Órarend betöltése (orarend_NHJYQC.json)</button>
+    <input type="file" id="fileInput" accept=".json" style="margin-left: 10px;">
+
+    <div id="orarendOutput"></div>
+
+    <script>
+        function megjelenitOrarend(data) {
+            const rootKey = Object.keys(data)[0];
+            const orak = data[rootKey].ora;
+            const container = document.getElementById("orarendOutput");
+            container.innerHTML = "";
+
+            orak.forEach(ora => {
+                const div = document.createElement("div");
+                div.className = "ora-blokk";
+                div.innerHTML = `
+                    <p><strong>Tárgy:</strong> ${ora.targy}</p>
+                    <p><strong>Időpont:</strong> ${ora.idopont.nap}, ${ora.idopont.tol}:00 - ${ora.idopont.ig}:00</p>
+                    <p><strong>Helyszín:</strong> ${ora.helyszin}</p>
+                    <p><strong>Oktató:</strong> ${ora.oktato}</p>
+                    <p><strong>Szak:</strong> ${ora.szak}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        document.getElementById("betoltBtn").addEventListener("click", () => {
+            fetch("orarend_NHJYQC.json")
+                .then(response => {
+                    if (!response.ok) throw new Error("Nem sikerült betölteni a JSON fájlt.");
+                    return response.json();
+                })
+                .then(data => megjelenitOrarend(data))
+                .catch(err => {
+                    alert("Helyi fájlrendszer (file://) esetén használd a mellekelt Fájl kiválasztása gombot, vagy indíts VS Code Live Servert!\nRészletek: " + err.message);
+                });
+        });
+
+        document.getElementById("fileInput").addEventListener("change", (event) => {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const data = JSON.parse(e.target.result);
+                megjelenitOrarend(data);
+            };
+            reader.readAsText(file);
+        });
+    </script>
+</body>
+</html>
