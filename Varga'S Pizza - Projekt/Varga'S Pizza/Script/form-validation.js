@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    
+        $('#toggleCouponBtn').on('click', function() {
+            $('#couponBox').slideToggle(300);
+        });
+
     $('#orderForm').on('submit', function(e) {
         let isValid = true;
 
@@ -31,13 +36,9 @@ $(document).ready(function() {
             $('#aszf-error').text('');
         }
 
-    
-        $('#toggleCouponBtn').on('click', function() {
-            $('#couponBox').slideToggle(300);
-        });
-
         if(!isValid){
             e.preventDefault();
         }
     });
 });
+
